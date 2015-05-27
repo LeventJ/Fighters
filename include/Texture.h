@@ -8,13 +8,16 @@ class Texture{
 public:
     static sf::Texture HERO;
 
-    static sf::Texture ENEMY;
+    static sf::Texture ENEMY_SMALL;
+    static sf::Texture ENEMY_MIDDLE;
+    static sf::Texture ENEMY_BIG;
     static sf::Texture ENEMY_DOWN_1;
     static sf::Texture ENEMY_DOWN_2;
     static sf::Texture ENEMY_DOWN_3;
     static sf::Texture ENEMY_DOWN_4;
 
     static sf::Texture BULLET;
+    static sf::Texture BULLET2;
 
     static sf::Texture SKY;
 

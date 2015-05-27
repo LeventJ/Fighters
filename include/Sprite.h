@@ -8,6 +8,7 @@ class Sprite:public sf::Sprite
 {
     public:
         virtual void beam(){};
+        virtual void boss_beam(){};
         void draw();
         bool intersects(Sprite* other);
     protected:

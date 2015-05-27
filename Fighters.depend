@@ -1,15 +1,18 @@
 # depslib dependency file v1.0
-1432638413 source:f:\fighters\fighters\src\sky.cpp
+1432735904 source:f:\fighters\fighters\src\sky.cpp
 	"Sky.h"
 	"Enemy.h"
+	"Boss.h"
 	"Texture.h"
 
-1432638025 f:\fighters\fighters\include\sky.h
+1432734713 f:\fighters\fighters\include\sky.h
 	<SFML/Graphics.hpp>
 	<vector>
 	"Sprite.h"
 	"Enemy.h"
 	"Bullet.h"
+	"BossBullet.h"
+	"Boss.h"
 	<iostream>
 	<unordered_set>
 
@@ -391,14 +394,14 @@
 	<string>
 	<vector>
 
-1432632329 source:f:\fighters\fighters\src\bullet.cpp
+1432734121 source:f:\fighters\fighters\src\bullet.cpp
 	"Bullet.h"
 	"Texture.h"
 
-1432629150 f:\fighters\fighters\include\bullet.h
+1432734122 f:\fighters\fighters\include\bullet.h
 	"Sprite.h"
 
-1432639409 source:f:\fighters\fighters\src\enemy.cpp
+1432655097 source:f:\fighters\fighters\src\enemy.cpp
 	"Enemy.h"
 	"Texture.h"
 	"Music.h"
@@ -406,26 +409,28 @@
 	<random>
 	<iostream>
 
-1432629300 f:\fighters\fighters\include\enemy.h
+1432653779 f:\fighters\fighters\include\enemy.h
 	<Plane.h>
+	<SFML/Graphics.hpp>
 
-1432629699 f:\fighters\fighters\include\plane.h
+1432735033 f:\fighters\fighters\include\plane.h
 	<SFML/Graphics.hpp>
 	"Gun.h"
 	"Sprite.h"
 	<iostream>
 
-1432629538 source:f:\fighters\fighters\src\gun.cpp
+1432734821 source:f:\fighters\fighters\src\gun.cpp
 	"Gun.h"
 	"Sky.h"
 	"Plane.h"
 	"Bullet.h"
+	"BossBullet.h"
 
-1432629539 f:\fighters\fighters\include\gun.h
+1432734352 f:\fighters\fighters\include\gun.h
 	<iostream>
 	<SFML/Graphics.hpp>
 
-1432614971 source:f:\fighters\fighters\src\plane.cpp
+1432735033 source:f:\fighters\fighters\src\plane.cpp
 	"Plane.h"
 
 1432629411 source:f:\fighters\fighters\src\random.cpp
@@ -439,11 +444,11 @@
 	"Sprite.h"
 	"Sky.h"
 
-1432629074 f:\fighters\fighters\include\sprite.h
+1432733723 f:\fighters\fighters\include\sprite.h
 	<iostream>
 	<SFML/Graphics.hpp>
 
-1432638116 source:f:\fighters\fighters\main.cpp
+1432737418 source:f:\fighters\fighters\main.cpp
 	<SFML/Audio.hpp>
 	<SFML/Graphics.hpp>
 	"Sky.h"
@@ -554,13 +559,13 @@
 	<SFML/Audio/Export.hpp>
 	<string>
 
-1432614226 f:\fighters\fighters\include\texture.h
+1432736164 f:\fighters\fighters\include\texture.h
 	<SFML/Graphics.hpp>
 
 1432614499 f:\fighters\fighters\include\music.h
 	<SFML/Audio.hpp>
 
-1432629596 f:\fighters\fighters\include\myplane.h
+1432737924 f:\fighters\fighters\include\myplane.h
 	<iostream>
 	<Plane.h>
 
@@ -568,10 +573,39 @@
 	"Music.h"
 	<SFML/Audio.hpp>
 
-1432629625 source:f:\fighters\fighters\src\myplane.cpp
+1432737924 source:f:\fighters\fighters\src\myplane.cpp
 	"Myplane.h"
 	"Texture.h"
 
-1432614998 source:f:\fighters\fighters\src\texture.cpp
+1432736164 source:f:\fighters\fighters\src\texture.cpp
+	"Texture.h"
+
+1432645177 source:f:\fighters\fighters\src\enemy2.cpp
+	"Enemy2.h"
+	"Texture.h"
+	"Music.h"
+	"Random.h"
+	<random>
+	<iostream>
+
+1432645121 f:\fighters\fighters\include\enemy2.h
+	<Plane.h>
+
+1432737068 f:\fighters\fighters\include\boss.h
+	"Plane.h"
+
+1432737188 source:f:\fighters\fighters\src\boss.cpp
+	"Boss.h"
+	"Texture.h"
+	"Music.h"
+	"Random.h"
+	<random>
+	<iostream>
+
+1432734120 f:\fighters\fighters\include\bossbullet.h
+	"Sprite.h"
+
+1432737132 source:f:\fighters\fighters\src\bossbullet.cpp
+	"BossBullet.h"
 	"Texture.h"
 

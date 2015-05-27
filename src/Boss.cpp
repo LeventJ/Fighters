@@ -1,27 +1,35 @@
-#include "Enemy.h"
+#include "Boss.h"
 #include "Texture.h"
 #include "Music.h"
 #include "Random.h"
+
 #include <random>
+
 #include <iostream>
 using namespace std;
-
-Enemy::Enemy()
+Boss::Boss()
 {
-    this->setTexture(Texture::ENEMY_SMALL);
-    uniform_int_distribution<unsigned> u(0,400);
+    this->setTexture(Texture::ENEMY_MIDDLE);
+
+    uniform_int_distribution<unsigned> u(0,320);
     std::default_random_engine random_engine;
     this->setPosition(u(Random::random_engine), 20);
 
     this->gun.setOwner(this);
 }
-void Enemy::beam()
+
+void Boss::beam()
 {
 
     switch(this->state){
         case 0:
-            this->move(0,0.1);
-            break;
+            this->move(0,0.05);
+            //a=this->getPosition().y;
+            if(this->getPosition().y>a){
+                this->boss_fire();
+                a+=100;
+            }
+           break;
         case 1:
             this->setTexture(Texture::ENEMY_DOWN_2);
             this->state++;
@@ -37,22 +45,18 @@ void Enemy::beam()
         default:;
     }
 }
-void Enemy::hit()
+
+void Boss::hit()
 {
-    sf::Clock clock;
-    sf::Time time;
-    time = clock.getElapsedTime();
     this->state = 1;
-    while((double)time.asSeconds()>0.1&&(double)time.asSeconds()<10)
-        this->setTexture(Texture::ENEMY_DOWN_1);
-     clock.restart();
+    this->setTexture(Texture::ENEMY_DOWN_1);
     Music::ENEMY_DOWN.play();
 }
-bool Enemy::isneedClear()
-{
+
+bool Boss::isneedClear(){
     return this->state == 4;
 }
-bool Enemy::isDead()
-{
-    return this->state!=0;
+
+bool Boss::isDead(){
+    return this->state != 0;
 }

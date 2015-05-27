@@ -5,6 +5,8 @@
 #include "Sprite.h"
 #include "Enemy.h"
 #include "Bullet.h"
+#include "BossBullet.h"
+#include "Boss.h"
 #include <iostream>
 #include <unordered_set>
 using namespace std;
@@ -15,6 +17,7 @@ class Sky
         sf::RenderWindow* getWindow();
         void add(Sprite *);
         void addBullet(Bullet *);
+        void addBossBullet(BossBullet *);
         void refresh();
 
 
@@ -26,14 +29,20 @@ class Sky
         unordered_set<Sprite*> sprites;
         ///vector<Enemy*> enemies;
         unordered_set<Enemy*> enemies;
+        ///vector<Boss*> bosses;
+        unordered_set<Boss*> bosses;
         ///vector<Bullet*> bullets;
         unordered_set<Bullet*> bullets;
+         ///vector<Bullet*> bullets;
+        unordered_set<BossBullet*> bossbullets;
+
         sf::Sprite* background = nullptr;
         static Sky* instance;
 
         void clear();
         void collision();
         void createenemies();
+        void createbosses();
 };
 
 #endif // SKY_H

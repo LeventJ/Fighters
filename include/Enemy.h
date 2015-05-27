@@ -1,7 +1,7 @@
 #ifndef ENEMY_H
 #define ENEMY_H
 #include <Plane.h>
-
+#include <SFML/Graphics.hpp>
 class Enemy:public Plane
 {
     public:

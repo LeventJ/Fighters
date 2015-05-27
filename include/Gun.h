@@ -11,6 +11,7 @@ class Gun
     public:
         void setOwner(Plane * owner);
         void fire();
+        void boss_fire();
     private:
         sf::Vector2f getPosition();
         Plane* owner;

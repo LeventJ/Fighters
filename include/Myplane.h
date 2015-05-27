@@ -11,6 +11,7 @@ class Myplane:public Plane
         void move_right();
         void move_up();
         void move_down();
+        void move_left_up();
     protected:
     private:
 };
