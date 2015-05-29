@@ -14,6 +14,7 @@ class Boss:public Plane
     private:
         int state=0;
         int a=0;
+        int cnt1=0;
 };
 
 #endif // BOSS_H

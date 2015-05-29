@@ -18,7 +18,7 @@ class Sky
         void add(Sprite *);
         void addBullet(Bullet *);
         void addBossBullet(BossBullet *);
-        void refresh();
+        void refresh(sf::Clock,sf::Time,sf::Text);
 
 
     protected:
@@ -37,12 +37,14 @@ class Sky
         unordered_set<BossBullet*> bossbullets;
 
         sf::Sprite* background = nullptr;
+        sf::Text* scores = nullptr;
         static Sky* instance;
 
         void clear();
-        void collision();
+        void collision(sf::Clock,sf::Time);
         void createenemies();
         void createbosses();
+
 };
 
 #endif // SKY_H

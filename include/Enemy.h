@@ -7,12 +7,13 @@ class Enemy:public Plane
     public:
         Enemy();
         void beam();
-        void hit();
+        void hit(sf::Clock,sf::Time);
         bool isneedClear();
         bool isDead();
     protected:
     private:
         int state = 0;
+        int cnt=0;
 };
 
 #endif // ENEMY_H

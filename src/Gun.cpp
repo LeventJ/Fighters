@@ -7,7 +7,7 @@
 void Gun::fire()
 {
     sf::Vector2f postion = ((this->owner)->getPosition());
-    Bullet* bullet1 = new Bullet(postion.x,postion.y);
+    Bullet* bullet1 = new Bullet(postion.x+10,postion.y);
     Bullet* bullet2 = new Bullet(postion.x+80,postion.y);
     Sky::getInstance()->add(bullet1);
     Sky::getInstance()->addBullet(bullet1);

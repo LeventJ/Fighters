@@ -2,6 +2,8 @@
 #include "Enemy.h"
 #include "Boss.h"
 #include "Texture.h"
+#include "Font.h"
+#include <SFML/Graphics.hpp>
 
 Sky* Sky::instance = nullptr;
 
@@ -9,7 +11,6 @@ Sky::Sky()
 {
     this->window = new sf::RenderWindow(sf::VideoMode(480, 800), L"Fighters");
     this->background = new sf::Sprite(Texture::SKY);
-
 }
 Sky* Sky::getInstance()
 {
@@ -65,9 +66,33 @@ void Sky::clear()
                 ++it_boss;
         }
     }
+    for(auto it_bullet = this->bossbullets.begin();it_bullet!=bossbullets.end();)
+    {
+        if((*it_bullet)->isneedclear()){
+                delete *it_bullet;
+
+                this->sprites.erase(*it_bullet);
+
+                it_bullet = (this->bossbullets).erase(it_bullet);
+        }else{
+                ++it_bullet;
+        }
+    }
+    for(auto it_bullet = this->bullets.begin();it_bullet!=bullets.end();)
+    {
+        if((*it_bullet)->isneedclear()){
+                delete *it_bullet;
+
+                this->sprites.erase(*it_bullet);
+
+                it_bullet = (this->bullets).erase(it_bullet);
+        }else{
+                ++it_bullet;
+        }
+    }
 }
 
-void Sky::collision(){
+void Sky::collision(sf::Clock clock,sf::Time time){
     for(auto it_enemy= this->enemies.begin();it_enemy!=this->enemies.end();++it_enemy){
         if((*it_enemy)->isDead()) continue;
 
@@ -77,7 +102,7 @@ void Sky::collision(){
                 this->sprites.erase(*it_bullet);
                 (this->bullets).erase(it_bullet);
 
-                (*it_enemy)->hit();
+                (*it_enemy)->hit(clock,time);
                 break;
             }
         }
@@ -90,7 +115,6 @@ void Sky::collision(){
                 delete *it_bullet;
                 this->sprites.erase(*it_bullet);
                 (this->bullets).erase(it_bullet);
-
                 (*it_boss)->hit();
                 break;
             }
@@ -127,19 +151,24 @@ void Sky::createbosses()
         cnt2=0;
     }
 }
-void Sky::refresh()
+void Sky::refresh(sf::Clock clock,sf::Time time,sf::Text text)
 {
     this->window->draw(*this->background);
+    this->window->draw(text);
     this->clear();
-    this->collision();
+    this->collision(clock,time);
     this->createenemies();
     this->createbosses();
     for(auto &sprite:this->sprites)
     {
+
         sprite->beam();
+
         sprite->boss_beam();
         this->window->draw(*sprite);
     }
+
+
 
     this->window->display();
 }

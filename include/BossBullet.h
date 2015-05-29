@@ -7,6 +7,7 @@ class BossBullet:public Sprite
     public:
         BossBullet(float x,float y);
         void boss_beam();
+        bool isneedclear();
     protected:
     private:
 };

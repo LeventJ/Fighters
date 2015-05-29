@@ -11,6 +11,10 @@ void Bullet::beam()
 {
     this->move(0,-1);
 }
+bool Bullet::isneedclear()
+{
+    return this->getPosition().y<0;
+}
 
 
 

@@ -7,7 +7,7 @@ class Bullet:public Sprite
     public:
         Bullet(float x,float y);
         void beam();
-
+        bool isneedclear();
     protected:
     private:
 };

@@ -11,6 +11,10 @@ public:
     static sf::Texture ENEMY_SMALL;
     static sf::Texture ENEMY_MIDDLE;
     static sf::Texture ENEMY_BIG;
+    static sf::Texture ENEMY_BIG_DOWN_1;
+    static sf::Texture ENEMY_BIG_DOWN_2;
+    static sf::Texture ENEMY_BIG_DOWN_3;
+    static sf::Texture ENEMY_BIG_DOWN_4;
     static sf::Texture ENEMY_DOWN_1;
     static sf::Texture ENEMY_DOWN_2;
     static sf::Texture ENEMY_DOWN_3;
