@@ -2,6 +2,7 @@
 #define FONT_H
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
+
 class Font
 {
     public:

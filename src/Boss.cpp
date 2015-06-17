@@ -23,7 +23,7 @@ void Boss::beam()
 
     switch(this->state){
         case 0:
-            this->move(0,0.04);
+            this->move(0,0.4);
             if(this->getPosition().y+100>a){
                 this->boss_fire();
                 a+=30;
@@ -47,36 +47,12 @@ void Boss::beam()
 
 void Boss::hit()
 {
-    this->setTexture(Texture::ENEMY_DOWN_1);
-    if(cnt1>7)
+    cnt1++;
+    if(cnt1>8)
     {
-    this->state = 1;
-    cnt1=0;
-    }else{
-        cnt1++;
-        switch(this->cnt1)
-        {
-            case 1:
-            case 2:
-                this->setTexture(Texture::ENEMY_BIG_DOWN_1);
-                break;
-            case 3:
-            case 4:
-                this->setTexture(Texture::ENEMY_BIG_DOWN_2);
-                break;
-            case 5:
-            case 6:
-                this->setTexture(Texture::ENEMY_BIG_DOWN_3);
-                break;
-            case 7:
-            case 8:
-                this->setTexture(Texture::ENEMY_BIG_DOWN_4);
-                break;
-
-        }
-
-
+        this->state=1;
     }
+
     Music::ENEMY_DOWN.play();
 }
 

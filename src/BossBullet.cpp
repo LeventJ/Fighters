@@ -9,7 +9,7 @@ BossBullet::BossBullet(float x,float y)
 
 void BossBullet::boss_beam()
 {
-    this->move(0,0.2);
+    this->move(0,2);
 }
 
 bool BossBullet::isneedclear()

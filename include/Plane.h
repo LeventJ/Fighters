@@ -11,6 +11,7 @@ class Plane:public Sprite
     public:
         void fire();
         void boss_fire();
+
     protected:
         Gun gun;
     private:

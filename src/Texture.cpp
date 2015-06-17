@@ -1,6 +1,9 @@
 #include "Texture.h"
 
 sf::Texture Texture::HERO;
+sf::Texture Texture::HERO_DOWN_1;
+sf::Texture Texture::HERO_DOWN_2;
+sf::Texture Texture::HERO_DOWN_3;
 
 sf::Texture Texture::ENEMY_SMALL;
 sf::Texture Texture::ENEMY_MIDDLE;
@@ -18,11 +21,19 @@ sf::Texture Texture::BULLET;
 sf::Texture Texture::BULLET2;
 
 sf::Texture Texture::SKY;
+sf::Texture Texture::SKY_1;
+sf::Texture Texture::SKY_2;
+sf::Texture Texture::SKY_3;
+sf::Texture Texture::SKY_4;
 
 void Texture::load(){
     std::string path ="image/shoot.png";
 
     HERO.loadFromFile(path, sf::IntRect(0, 99, 102, 126));
+    HERO_DOWN_1.loadFromFile(path, sf::IntRect(330, 624, 102, 126));
+    HERO_DOWN_2.loadFromFile(path, sf::IntRect(330, 498, 102, 126));
+    HERO_DOWN_3.loadFromFile(path, sf::IntRect(430, 624, 102, 126));
+
     ENEMY_SMALL.loadFromFile(path, sf::IntRect(534, 612, 57, 43));
     ENEMY_MIDDLE.loadFromFile(path, sf::IntRect(0, 10, 68, 80));
 
@@ -40,4 +51,8 @@ void Texture::load(){
     BULLET2.loadFromFile(path, sf::IntRect(69, 78, 9, 21));
 
     SKY.loadFromFile("image/background.png");
+    SKY_1.loadFromFile("image/background_1.png");
+    SKY_2.loadFromFile("image/background_2.png");
+    SKY_3.loadFromFile("image/background_3.png");
+    SKY_4.loadFromFile("image/gameover.png");
 }

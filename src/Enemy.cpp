@@ -21,41 +21,39 @@ void Enemy::beam()
     switch(this->state){
         case 0:
 
-            this->move(0,0.1);
+            this->move(0,1);
             break;
         case 1:
-
+        case 2:
+        case 3:
             this->setTexture(Texture::ENEMY_DOWN_2);
             //while((double)time.asSeconds()>0.1&&(double)time.asSeconds()<1){};
             this->state++;
             break;
-        case 2:
+        case 4:
+        case 5:
+        case 6:
             this->setTexture(Texture::ENEMY_DOWN_3);
             this->state++;
             break;
-        case 3:
+        case 7:
+        case 8:
+        case 9:
             this->setTexture(Texture::ENEMY_DOWN_4);
             this->state++;
             break;
         default:;
     }
 }
-void Enemy::hit(sf::Clock clock,sf::Time time)
+void Enemy::hit()
 {
     this->setTexture(Texture::ENEMY_DOWN_1);
-    if(cnt>0)
-    {
-    this->state = 1;
-    cnt=0;
-    }else{
-    this->setTexture(Texture::ENEMY_DOWN_2);
-    cnt++;
-    }
+    state++;
     Music::ENEMY_DOWN.play();
 }
 bool Enemy::isneedClear()
 {
-    return (this->state == 3)||(this->getPosition().y>800);
+    return (this->state == 10)||(this->getPosition().y>800);
 }
 bool Enemy::isDead()
 {

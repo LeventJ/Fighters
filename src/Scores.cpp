@@ -2,10 +2,8 @@
 
 Scores::Scores()
 {
-    //ctor
+    this->font->setFont(Font::SCORES);
+    this->text("SCORES :", font, 10);
 }
 
-Scores::~Scores()
-{
-    //dtor
-}
+

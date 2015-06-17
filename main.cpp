@@ -6,25 +6,24 @@
 #include "Myplane.h"
 #include <string>
 #include <iostream>
-
-int main()
+#include <sstream>
+#include <stdlib.h>
+int main(int argc, char* argv[])
 {
     Texture::load();
     Music::load();
     Sky* sky = Sky::getInstance();
     sf::RenderWindow* window = sky->getWindow();
+    //window->setFramerateLimit(1200);
     Music::BACK_GROUND.play();
     Myplane myplane;
-    sky->add(&myplane);
+    sky->addmyplane(&myplane);
     sf::Clock clock;
     sf::Time time;
     //clock.restart();
 
 
-    sf::Font font;
-    if (!font.loadFromFile("font/STHeiti Light.ttc"))
-        return EXIT_FAILURE;
-    sf::Text text("SCORES :", font, 10);
+
 
 
     while (window->isOpen())
@@ -50,7 +49,7 @@ int main()
                 myplane.fire();
 
         }
-        sky->refresh(clock,time,text);
+        sky->refresh();
     }
     return EXIT_SUCCESS;
 }

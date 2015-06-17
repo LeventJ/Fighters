@@ -1,5 +1,6 @@
 #include "Myplane.h"
 #include "Texture.h"
+#include "Music.h"
 
 Myplane::Myplane()
 {
@@ -26,4 +27,22 @@ void Myplane::move_down()
 {
     if(this->getPosition().y<680)
     this->move(0,10);
+}
+void Myplane::hit()
+{
+    switch(this->cnt)
+    {
+    case 0:
+        this->setTexture(Texture::HERO_DOWN_1);
+        break;
+    case 1:
+        this->setTexture(Texture::HERO_DOWN_2);
+        break;
+    case 2:
+        this->setTexture(Texture::HERO_DOWN_3);
+        break;
+    }
+
+    cnt++;
+    Music::ENEMY_DOWN.play();
 }

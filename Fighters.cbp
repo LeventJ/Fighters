@@ -50,7 +50,6 @@
 		<Unit filename="include/BossBullet.h" />
 		<Unit filename="include/Bullet.h" />
 		<Unit filename="include/Enemy.h" />
-		<Unit filename="include/Font.h" />
 		<Unit filename="include/Gun.h" />
 		<Unit filename="include/Music.h" />
 		<Unit filename="include/Myplane.h" />

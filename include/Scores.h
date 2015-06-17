@@ -1,14 +1,17 @@
 #ifndef SCORES_H
 #define SCORES_H
+#include <SFML/Audio.hpp>
+#include <SFML/Graphics.hpp>
+#include "Font.h"
 
-
-class Scores
+class Scores:public sf::Text
 {
     public:
         Scores();
-        virtual ~Scores();
     protected:
     private:
+        sf::Font font;
+        sf::Text text;
 };
 
 #endif // SCORES_H

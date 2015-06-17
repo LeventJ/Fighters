@@ -7,7 +7,7 @@ class Enemy:public Plane
     public:
         Enemy();
         void beam();
-        void hit(sf::Clock,sf::Time);
+        void hit();
         bool isneedClear();
         bool isDead();
     protected:

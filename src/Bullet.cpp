@@ -9,7 +9,7 @@ Bullet::Bullet(float x,float y)
 
 void Bullet::beam()
 {
-    this->move(0,-1);
+    this->move(0,-10);
 }
 bool Bullet::isneedclear()
 {

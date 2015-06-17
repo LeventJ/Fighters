@@ -9,6 +9,11 @@
 #include "Boss.h"
 #include <iostream>
 #include <unordered_set>
+
+#include <string>
+#include <iostream>
+#include <sstream>
+#include <stdlib.h>
 using namespace std;
 class Sky
 {
@@ -16,17 +21,21 @@ class Sky
         static Sky* getInstance();
         sf::RenderWindow* getWindow();
         void add(Sprite *);
+        void addmyplane(Sprite*);
         void addBullet(Bullet *);
         void addBossBullet(BossBullet *);
-        void refresh(sf::Clock,sf::Time,sf::Text);
+        void refresh();
 
 
     protected:
     private:
+
         Sky();
         sf::RenderWindow* window;
          ///vector<Sprite*> sprites;
         unordered_set<Sprite*> sprites;
+        ///vector<Sprite*> sprites;
+        unordered_set<Sprite*> myplane;
         ///vector<Enemy*> enemies;
         unordered_set<Enemy*> enemies;
         ///vector<Boss*> bosses;
@@ -40,10 +49,15 @@ class Sky
         sf::Text* scores = nullptr;
         static Sky* instance;
 
+        int n = 0;
+        bool control=true;
+        //sf::Text text;
         void clear();
-        void collision(sf::Clock,sf::Time);
+        void collision();
         void createenemies();
         void createbosses();
+        int m=0;
+        void changesky();
 
 };
 
