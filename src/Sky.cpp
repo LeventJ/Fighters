@@ -176,7 +176,18 @@ void Sky::collision(){
 void Sky::createenemies()
 {
     static int cnt = 0;
-    if(++cnt>=100)
+    int limit=100;
+    if(n<3000)
+    {
+        limit=100;
+    }else if(n<6000)
+        {
+            limit=60;
+        }else if(n<10000)
+            {
+                limit = 30;
+            }
+    if(++cnt>=limit)
     {
         Enemy* enemy = new Enemy;
         //this->sprites.push_back(enemy);
@@ -188,8 +199,20 @@ void Sky::createenemies()
 }
 void Sky::createbosses()
 {
+
     static int cnt2 = 0;
-    if(++cnt2>=1000)
+    int limit=1000;
+    if(n<3000)
+    {
+        limit=1000;
+    }else if(n<6000)
+        {
+            limit=600;
+        }else if(n<10000)
+            {
+                limit = 300;
+            }
+    if(++cnt2>=limit)
     {
         Boss* boss = new Boss;
 
